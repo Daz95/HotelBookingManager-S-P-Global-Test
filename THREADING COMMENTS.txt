@@ -1,0 +1,6 @@
+As I am not experienced with thread handling I will detail my understanding of how this could be handled.
+
+Making the code "Thread Safe"
+- I would look to add a simple lock on the "_bookings" list whilst executing the "AddBooking" method.
+- This will avoid other threads updating the list at the same time.
+- It would also ensure that any read methods (such as "IsRoomAvailable") will wait for the "_bookings" list to be updated before continuing.
